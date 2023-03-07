@@ -35,9 +35,11 @@ public class MainClass {
 		Mage m1 = new Mage("zl존법사");
 		m1.characterInfo();
 		
-		Hunter h1 = new Hunter("암살");
+		Hunter h1 = new Hunter("zl존암살");
 		h1.characterInfo();
 		
+		w1.attack(m1);
+		m1.attack(h1);
 		
 	}
 

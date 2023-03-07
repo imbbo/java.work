@@ -7,7 +7,7 @@ public class Bread {
 		int price;
 		String ingredient;
 	
-		Bread(){}
+		Bread(){} // 기본값도 받을수는 있어야하니 ㅇㅇ 
 		
 		Bread(String pName, int pPrice, String pIngredient) {
 			name = pName;
