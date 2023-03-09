@@ -18,6 +18,9 @@ public abstract class Shape {
 	public Shape(String name) {
 		this.name = name;
 	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	
 	public abstract double getArea();
 		
@@ -25,9 +28,6 @@ public abstract class Shape {
 		System.out.println("도형이름: " + name);
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
 	
 //	abstract void 
 	

@@ -17,3 +17,13 @@ public class Circle extends Shape {
 
 	}
 }
+
+
+//	pivate int radius;
+//	
+//	public Circle(String name, int radius) {
+//		super(name);
+//		this.radius = radius;
+//	}
+//	public double getArea() {				// solution
+//		return radius*radius*Math.PI;
