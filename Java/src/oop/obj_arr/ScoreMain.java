@@ -23,13 +23,50 @@ public class ScoreMain {
          모두 null로 가득 차 있습니다. (null.scoreInfo() -> 에러)
         */
 		
+//		Score[] scroes = new SScore[100];
+//		
+//		while(true) {
+//			System.out.println("국어 점수 입력: ");
+//			
+//		}
 		Scanner sc = new Scanner(System.in);
-		String[] scroes = new String[100];
+		Score[] scores = new Score[100];
 		
-		while(true) {
-			System.out.println("국어 점수 입력: ");
+		for(int i=0; i<scores.length; i++) {
+			System.out.println("*** 학생 점수 입력 프로그램***");
+			System.out.println("'그만'을 입력하시면 종료됩니다.");
 			
-		}
+			System.out.println("이름: ");
+			String name =sc.next();
+			if(name.equals("그만")) {
+				System.out.println("입력을 종료합니다");
+				break;
+			}
+				System.out.println("국어: ");
+				int kor = sc.nextInt();
+				System.out.println("영어: ");
+				int eng = sc.nextInt();
+				System.out.println("수학: ");
+				int mat = sc.nextInt();
+				
+				int total = kor + eng + mat;
+				double avg = total / 3.0;
+				
+				scores[i] = new Score(name, kor, eng, mat, total, avg);
+				}
+		
+			for(Score s : scores) {
+				if(s == null) break;
+				s.scoreInfo();
+				System.out.println("------------------------");
+			}
+			
+			sc.close();
+			
+		
+		
+		
+		
 		
 		
 		
