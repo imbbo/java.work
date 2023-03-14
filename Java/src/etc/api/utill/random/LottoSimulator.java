@@ -1,10 +1,13 @@
 package etc.api.utill.random;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+
+import basic.datatype.integerExample;
 
 public class LottoSimulator {
 
@@ -17,7 +20,7 @@ public class LottoSimulator {
 	static int prize5 = 0; // 5등 당첨 횟수를 세 줄 변수
 	static int failCnt = 0; // 꽝 당첨 횟수를 세 줄 변수
 	
-	public static Integer createLotto() {
+	public static List<Integer> createLotto() {
 		
 		/*
 		 - 1~45 범위의 난수 6개를 생성하셔서
@@ -31,13 +34,14 @@ public class LottoSimulator {
 			lotto.add(num);
 		}
 		
-		
-		
-		
+		List<Integer> list = new ArrayList<>(lotto);
+		Collections.sort(list);
+		return list;
+			
 	}
 	
 	// 보너스 번호를 생성하는 메서드
-	public static int creatBonusNum() {
+	public static int creatBonusNum(List<Integer> number) {
 		
 		/*
 		 - 매개값으로 전달되는 당첨 번호 집합을 전달 받으신 후
@@ -45,15 +49,19 @@ public class LottoSimulator {
 		 범위는 마찬가지로 1 ~ 45 사이의 난수입니다.
 		 */
 		
-		
-		
-		
-		
-		
+		while(true) {
+			int bonusNum = r.nextInt(45)+1;
+			if(number.contains(bonusNum)) {
+				continue;
+			} else {
+				return bonusNum;
+			}
+		}
+
 	}
-	
+	 
 	// 당첨 등수를 알려주는 메서드
-	public static void checkLottoNumber(???, ???, ???) {
+	public static int checkLottoNumber(List<Integer>number, Set<Integer>buyNum, int bonusNum) {
 		
 		/*
 		 매개값으로 당첨번호집합, 구매한 로또 번호 집합, 보너스번호를 받습니다
@@ -68,6 +76,21 @@ public class LottoSimulator {
 		 나머지 -> 꽝
 		 */
 		
+		List<Integer> lotNum = new ArrayList<>(number);
+		List<Integer> myNum = new ArrayList<>(buyNum);
+		Collections.sort(lotNum);
+		Collections.sort(myNum);
+		
+		int count = 0;
+		
+		for(int i=0; i<myNum.size(); i++) {
+			if(myNum.contains(lotNum.get(i) )) {
+				count++;
+			}
+			
+		}
+		return count;
+					
 		
 	}
 	
@@ -81,6 +104,10 @@ public class LottoSimulator {
 		
 		// 보너스번호도 하나 고정시키세요 
 		
+		List<Integer> number = createLotto();
+		int bonusNum = creatBonusNum(number);
+		
+	
 		while(true) {
 			/*
 			- 1등이 당첨 될 떄까지 반복문을 돌립니다
@@ -88,11 +115,21 @@ public class LottoSimulator {
 			반복문을 종료합니다.
 			- 로또를 구매하기 위한 금액도 출력하세요. (long) 
 			 */
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		}
 		
 		
 		
-		System.out.println();
+		
 		
 		
 		
